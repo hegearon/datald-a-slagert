@@ -8,11 +8,11 @@ Mindenképpen vásároljátok meg az eredeti játékot, ezzel támogatva az ered
 
 ## A projekt célja
 
-[ ] Saját kártyák generálása Spotify lejátszási lista alapján
+- [ ] Saját kártyák generálása Spotify lejátszási lista alapján
 
    Esetleg további szolgáltatók támogatása?
 
-[ ] A generált kártyák beolvasása, és a megfelelő szám lejátszása
+- [ ] A generált kártyák beolvasása, és a megfelelő szám lejátszása
 
 ## Az alkalmazás működése
 
@@ -20,7 +20,7 @@ Mindenképpen vásároljátok meg az eredeti játékot, ezzel támogatva az ered
 
 1. Készíts egy applikációt a [Spotify fejlesztői rendszerében](https://developer.spotify.com/).
    Erre azért van szükség, hogy a weboldal kommunikálni tudjon a Spotify szervereivel.
-2. Látogass el a [Datáld a slágert! weboldalra].
+2. Látogass el a [Datáld a slágert! weboldalra](https://hegearon.github.io/datald-a-slagert/).
 3. Az előbb elkészített applikáció kódjait másold be a webalkalmazásba (a későbbi látogatások során a böngésző emlékezni fog ezekre).
 4. Kössed össze a webalkalmazást a Spotify fiókóddal.
 5. Készíts saját kártyákat a webalkalmazással.
