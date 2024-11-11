@@ -16,10 +16,12 @@ permissions:
 
 jobs:
   build:
+    environment: github-pages
     runs-on: ubuntu-latest
     steps:
       - name: Print Spotify variables
         run: |
+          echo "client id: $PUBLIC_SPOTIFY_CLIENT_ID"
           echo "redirect url: $PUBLIC_SPOTIFY_REDIRECT_URL"
       - name: Checkout your repository using git
         uses: actions/checkout@v4
@@ -30,6 +32,7 @@ jobs:
             node-version: 22 # The specific version of Node that should be used to build your site. Defaults to 18. (optional)
             # package-manager: pnpm@latest # The Node package manager that should be used to install dependencies and build your site. Automatically detected based on your lockfile. (optional)
     env:
+      PUBLIC_SPOTIFY_CLIENT_ID: ${{ vars.PUBLIC_SPOTIFY_CLIENT_ID }}
       PUBLIC_SPOTIFY_REDIRECT_URL: ${{ vars.PUBLIC_SPOTIFY_REDIRECT_URL }}
 
   deploy:
