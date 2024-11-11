@@ -5,6 +5,8 @@ const someProps = {
   count: 0,
 };
 
+import EchoEnv from "../components/EchoEnv";
+
 // Full Astro Component Syntax:
 // https://docs.astro.build/basics/astro-components/
 ---
@@ -36,6 +38,8 @@ const someProps = {
       <Counter {...someProps} client:visible>
         <h1>Hello, React!</h1>
       </Counter>
+      <hr />
+      <EchoEnv variable="PUBLIC_SPOTIFY_REDIRECT_URL" />
     </main>
   </body>
 </html>
