@@ -1,45 +1,18 @@
 ---
+import MainLayout from "../layouts/MainLayout.astro";
 // Component Imports
 import Counter from "../components/Counter";
 const someProps = {
   count: 0,
 };
 
-import EchoEnv from "../components/EchoEnv";
-
 // Full Astro Component Syntax:
 // https://docs.astro.build/basics/astro-components/
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="/datald-a-slagert/favicon.svg"
-    />
-    <style>
-      html,
-      body {
-        font-family: system-ui;
-        margin: 0;
-      }
-      body {
-        padding: 2rem;
-      }
-    </style>
-    <script src="../main.ts"></script>
-  </head>
-  <body>
-    <main>
-      <Counter {...someProps} client:visible>
-        <h1>Hello, React!</h1>
-      </Counter>
-      <hr />
-      <EchoEnv variable="PUBLIC_SPOTIFY_REDIRECT_URL" />
-    </main>
-  </body>
-</html>
+<MainLayout>
+  <Counter {...someProps} client:visible>
+    <h1>Hello, React!</h1>
+  </Counter>
+  <hr />
+</MainLayout>
