@@ -6,6 +6,7 @@ const someProps = {
   count: 0,
 };
 
+import { GetProfile } from "../components/spotify/GetProfile";
 // Full Astro Component Syntax:
 // https://docs.astro.build/basics/astro-components/
 ---
@@ -15,4 +16,5 @@ const someProps = {
     <h1>Hello, React!</h1>
   </Counter>
   <hr />
+  <GetProfile client:only="react" />
 </MainLayout>

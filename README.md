@@ -9,9 +9,6 @@ Mindenképpen vásároljátok meg az eredeti játékot, ezzel támogatva az ered
 ## A projekt célja
 
 - [ ] Saját kártyák generálása Spotify lejátszási lista alapján
-
-   Esetleg további szolgáltatók támogatása?
-
 - [ ] A generált kártyák beolvasása, és a megfelelő szám lejátszása
 
 ## Az alkalmazás működése

@@ -1,7 +1,10 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+
+import { ConnectSpotify } from "../components/spotify/ConnectSpotify";
 ---
 
 <MainLayout>
   <p>Hello there!</p>
+  <ConnectSpotify client:only="react" />
 </MainLayout>

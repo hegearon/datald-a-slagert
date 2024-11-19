@@ -2,6 +2,7 @@
 /// <reference path="../.astro/types.d.ts" />
 
 interface ImportMetaEnv {
+  readonly PUBLIC_SPOTIFY_CLIENT_ID: string;
   readonly PUBLIC_SPOTIFY_REDIRECT_URL: string;
 }
 
