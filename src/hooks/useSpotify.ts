@@ -7,14 +7,17 @@ export function useSpotify() {
   const [sdk, setSdk] = useState<SpotifyApi>(null);
 
   useEffect(() => {
-    const internalSdk = SpotifyApi.withAccessToken(auth.settings.client_id, {
-      access_token: auth.user.access_token,
-      token_type: auth.user.token_type,
-      expires_in: auth.user.expires_in,
-      refresh_token: auth.user.refresh_token,
-    });
+    (async () => {
+      const user = await auth.signinSilent();
+      const internalSdk = SpotifyApi.withAccessToken(auth.settings.client_id, {
+        access_token: user.access_token,
+        token_type: user.token_type,
+        expires_in: user.expires_in,
+        refresh_token: user.refresh_token,
+      });
 
     setSdk(internalSdk);
+    })();
   }, [auth]);
 
   return sdk;
