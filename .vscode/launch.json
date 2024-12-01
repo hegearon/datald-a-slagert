@@ -6,6 +6,19 @@
       "name": "Development server",
       "request": "launch",
       "type": "node-terminal"
+    },
+    {
+      "name": "Edge",
+      "type": "msedge",
+      "request": "launch",
+      "url": "http://localhost:4321/datald-a-slagert/",
+      "webRoot": "${workspaceFolder}/src"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Server & Edge",
+      "configurations": ["Development server", "Edge"]
     }
   ]
 }
