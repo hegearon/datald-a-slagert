@@ -32,6 +32,7 @@ function AppInternal() {
           <button onClick={() => void auth.removeUser()}>Log out</button>
         </div>
         <GetProfile auth={auth} spotify={spotify} />
+        <DisplayPlaylist auth={auth} spotify={spotify} />
       </div>
     );
   }
