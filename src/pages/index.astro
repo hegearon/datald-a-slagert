@@ -1,20 +1,11 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-// Component Imports
-import Counter from "../components/Counter";
-const someProps = {
-  count: 0,
-};
 
-import { GetProfile } from "../components/spotify/GetProfile";
+import { App } from "../components/App"
 // Full Astro Component Syntax:
 // https://docs.astro.build/basics/astro-components/
 ---
 
 <MainLayout>
-  <Counter {...someProps} client:visible>
-    <h1>Hello, React!</h1>
-  </Counter>
-  <hr />
-  <GetProfile client:only="react" />
+  <App client:only="react" />
 </MainLayout>
