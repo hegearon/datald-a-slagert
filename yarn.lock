@@ -905,6 +905,11 @@
   dependencies:
     "@types/ms" "*"
 
+"@types/eslint-config-prettier@^6.11.3":
+  version "6.11.3"
+  resolved "https://registry.yarnpkg.com/@types/eslint-config-prettier/-/eslint-config-prettier-6.11.3.tgz#319f53eeb5a8b50e702fa081a9fe39bf01df8c1d"
+  integrity sha512-3wXCiM8croUnhg9LdtZUJQwNcQYGWxxdOWDjPe1ykCqJFPVpzAKfs/2dgSoCtAvdPeaponcWPI7mPcGGp9dkKQ==
+
 "@types/eslint@*":
   version "9.6.1"
   resolved "https://registry.yarnpkg.com/@types/eslint/-/eslint-9.6.1.tgz#d5795ad732ce81715f27f75da913004a56751584"
