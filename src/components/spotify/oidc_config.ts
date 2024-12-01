@@ -1,7 +1,7 @@
-import { type OidcClientSettings } from "oidc-client-ts";
 import { Scopes } from "@spotify/web-api-ts-sdk";
+import type { AuthProviderProps } from "react-oidc-context";
 
-export const spotify_oidc_config: OidcClientSettings = {
+export const spotify_oidc_config: AuthProviderProps = {
   authority: "https://accounts.spotify.com/authorize",
   // oidc is not configured on the authority endpoint
   metadata: {
@@ -18,4 +18,12 @@ export const spotify_oidc_config: OidcClientSettings = {
     ...Scopes.userPlayback,
     ...Scopes.userDetails,
   ].join(" "),
+  onSigninCallback() {
+    const location = window.location;
+    window.history.replaceState(
+      {},
+      document.title,
+      location.origin + location.pathname + location.hash,
+    );
+  },
 };
