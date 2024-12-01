@@ -1,19 +1,25 @@
 import { useEffect, useState } from "react";
-import { type UserProfile } from "@spotify/web-api-ts-sdk";
-import { AuthProvider } from "react-oidc-context";
+import { SpotifyApi, type UserProfile } from "@spotify/web-api-ts-sdk";
+import { type AuthContextProps } from "react-oidc-context";
 
-import { spotify_oidc_config } from "./oidc_config";
-import { useSpotify } from "../../hooks/useSpotify";
-
-function GetProfileInternal() {
-  const sdk = useSpotify();
+export function GetProfile({
+  auth,
+  spotify,
+}: {
+  auth: AuthContextProps;
+  spotify: SpotifyApi;
+}) {
   const [profile, setProfile] = useState<UserProfile>(null);
 
   useEffect(() => {
     (async () => {
-      setProfile(await sdk.currentUser.profile());
+      try {
+        setProfile(await spotify.currentUser.profile());
+      } catch (e) {
+        console.error(e);
+      }
     })();
-  }, [sdk]);
+  }, [auth]);
 
   if (profile === null) {
     return <p>Loading...</p>;
@@ -32,16 +38,6 @@ function GetProfileInternal() {
           <strong>Country:</strong> {profile.country}
         </li>
       </ul>
-    </>
-  );
-}
-
-export function GetProfile() {
-  return (
-    <>
-      <AuthProvider {...spotify_oidc_config}>
-        <GetProfileInternal />
-      </AuthProvider>
     </>
   );
 }
